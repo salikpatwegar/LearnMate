@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LearnMate helps college students understand topics through clear lessons, examples, and quizzes.">
+  <title>LearnMate — Understand. Practice. Master.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="games.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="LearnMate home"><span class="brand-mark">L</span> LearnMate<span class="brand-dot">.</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#subjects">Subjects</a>
+      <a href="#learn-play">Learn &amp; Play</a>
+      <a href="#c-arcade">C Arcade</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#my-progress">My progress</a>
+    </nav>
+    <button class="button button-small button-outline" id="resetProgress" type="button">Reset progress</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR LEARNING JOURNEY STARTS HERE</span>
+        <h1>Don't just memorize.<br><span>Truly understand.</span></h1>
+        <p class="hero-description">Learn with beginner-friendly lessons, practical coding missions, and games that earn you points.</p>
+        <form class="search-form" id="searchForm" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search subjects or topics..." aria-label="Search subjects or topics">
+          <button class="button" type="submit">Explore</button>
+        </form>
+        <div class="hero-actions"><a class="button" href="#learn-play">🧠 Start Quiz</a><a class="button button-outline" href="#subjects">Explore Subjects</a></div>
+        <div class="hero-note"><span>✓</span> Learn at your pace <span>✓</span> Practice as you go</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a study desk">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="floating-note note-top"><span class="note-icon">✦</span><span><b>Small steps.</b><br>Big understanding.</span></div>
+        <div class="book-stack">
+          <div class="book book-back"></div><div class="book book-middle"></div>
+          <div class="book book-front"><div class="book-spine"></div><span>LEARN<br>EVERY DAY</span><span class="book-sun">☼</span></div>
+        </div>
+        <div class="plant-pot"><div class="leaf leaf-a"></div><div class="leaf leaf-b"></div><div class="leaf leaf-c"></div><div class="pot"></div></div>
+        <div class="floating-note note-bottom"><span class="progress-ring">✓</span><span><b>You're making progress</b><br>One lesson at a time</span></div>
+      </div>
+    </section>
+
+    <section class="section games-section" id="learn-play">
+      <div class="section-heading"><div><span class="eyebrow">PLAY YOUR WAY TO MASTERY</span><h2>Learn &amp; Play</h2><p>Quick challenges turn your syllabus topics into a game. Answer questions, earn points, and try to beat your best score.</p></div><span class="result-count" id="gameBestScore">Best score: 0</span></div>
+      <div class="games-grid">
+        <article class="game-card game-blue"><div class="game-art" aria-hidden="true">&lt;/&gt;</div><span class="card-kicker">C LANGUAGE</span><h3>Code Sprint</h3><p>Practice C concepts with quick challenges, then use the Mini Shop lab to run code logic with real inputs.</p><div class="game-meta"><span>5 questions</span><span>⚡ Earn points</span></div><button class="button game-start" data-game="c-language" type="button">Play Quiz →</button></article>
+        <article class="game-card game-green"><div class="game-art" aria-hidden="true">▤</div><span class="card-kicker">DBMS</span><h3>Database Detective</h3><p>Find the right keys, spot database concepts, and solve data mysteries.</p><div class="game-meta"><span>5 questions</span><span>🕵️ Solve clues</span></div><button class="button game-start" data-game="dbms" type="button">Play Quiz →</button></article>
+        <article class="game-card game-orange"><div class="game-art" aria-hidden="true">SQL</div><span class="card-kicker">SQL</span><h3>Query Quest</h3><p>Choose clauses, read queries, and level up your database skills.</p><div class="game-meta"><span>5 questions</span><span>🏆 Earn points</span></div><button class="button game-start" data-game="sql" type="button">Play Quiz →</button></article>
+      </div>
+      <p class="game-note">Tip: Read each question carefully. Every correct answer earns 10 points, and you’ll see explanations as you play.</p>
+    </section>
+
+    <section class="section arcade-section" id="c-arcade">
+      <div class="section-heading"><div><span class="eyebrow">C PROGRAMMING ARCADE</span><h2>Play your way through C</h2><p>Real games, not quizzes. Catch values, hop a pointer through memory and program a robot with loops. Finish any game to count it toward your C level test.</p></div><span class="result-count" id="arcadeSummary">0 of 3 played</span></div>
+      <div class="arcade-grid">
+        <article class="arcade-card">
+          <pre class="arcade-peek" aria-hidden="true">   3.14   ↓
+[int] [float] [char] [char[]]</pre>
+          <h3>Type Catcher</h3><p>Values fall from the top. Send each one to its data type before it lands. It speeds up as you go.</p>
+          <div class="game-meta"><span>Arcade · data types</span><span data-arcade-best="catcher">Not played yet</span></div>
+          <button class="button game-start" type="button" data-arcade="catcher">Play Type Catcher →</button>
+        </article>
+        <article class="arcade-card">
+          <pre class="arcade-peek" aria-hidden="true">int *p = arr;
+p += 3;
+*p = 0;   // 💎 collected</pre>
+          <h3>Pointer Hopper</h3><p>Move a pointer through an array and write through it to collect gems. Go out of bounds and C bites back.</p>
+          <div class="game-meta"><span>Puzzle · pointers, arrays</span><span data-arcade-best="pointer">Not played yet</span></div>
+          <button class="button game-start" type="button" data-arcade="pointer">Play Pointer Hopper →</button>
+        </article>
+        <article class="arcade-card">
+          <pre class="arcade-peek" aria-hidden="true">for (int i = 0; i &lt; 8; i++)
+    move(1);   // 🤖 → 🏁</pre>
+          <h3>Loop Robot</h3><p>Edit the numbers in a real for loop, press run, and watch the robot follow your code.</p>
+          <div class="game-meta"><span>Puzzle · loops</span><span data-arcade-best="robot">Not played yet</span></div>
+          <button class="button game-start" type="button" data-arcade="robot">Play Loop Robot →</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Learning benefits">
+      <div><span class="stat-icon">◎</span><span><b>Learn step by step</b><small>Build strong foundations</small></span></div>
+      <div><span class="stat-icon">✎</span><span><b>Practice actively</b><small>Check your understanding</small></span></div>
+      <div><span class="stat-icon">↗</span><span><b>Track your progress</b><small>Keep moving forward</small></span></div>
+    </section>
+
+
+
+    <section class="section subjects-section" id="subjects">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE AND DISCOVER</span><h2>What do you want to learn?</h2><p>Follow a structured syllabus from beginner to advanced.</p></div>
+        <span class="result-count" id="resultCount">3 subjects</span>
+      </div>
+      <div class="subject-grid" id="subjectGrid">
+        <article class="subject-card" data-search="c language c programming variables data types operators conditions loops functions arrays pointers">
+          <div class="subject-icon icon-blue">C</div><span class="card-kicker">LEARN THE FUNDAMENTALS</span><h3>C Language</h3><p>Learn C syntax, variables, data types, conditions, loops, and functions.</p><button class="text-link" data-subject="c-language">Explore topics <span>→</span></button>
+        </article>
+        <article class="subject-card" data-search="dbms database management system tables records keys primary foreign normalization sql transactions">
+          <div class="subject-icon icon-green">▦</div><span class="card-kicker">ORGANIZE INFORMATION</span><h3>DBMS</h3><p>Understand databases, tables, keys, relationships, and normalization.</p><button class="text-link" data-subject="dbms">Explore topics <span>→</span></button>
+        </article>
+        <article class="subject-card" data-search="sql structured query language select insert update delete where order by databases queries">
+          <div class="subject-icon icon-orange">SQL</div><span class="card-kicker">ASK YOUR DATA</span><h3>SQL</h3><p>Write queries to retrieve, filter, and manage data in a database.</p><button class="text-link" data-subject="sql">Explore topics <span>→</span></button>
+        </article>
+      </div>
+      <div class="empty-state hidden" id="emptyState">No subjects match that search. Try “C”, “database”, or “SQL”.</div>
+    </section>
+
+
+
+    <section class="section how-section" id="how-it-works">
+      <div class="section-heading"><div><span class="eyebrow">A BETTER WAY TO LEARN</span><h2>Understand it, then master it.</h2><p>Every learning session is designed to help concepts stick.</p></div></div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-number">01</span><div class="step-emoji">📖</div><h3>Learn the idea</h3><p>Start with a beginner-friendly explanation and the key terms you need.</p></div>
+        <div class="step-card"><span class="step-number">02</span><div class="step-emoji">🔎</div><h3>See an example</h3><p>Connect the concept to a practical situation you can recognize.</p></div>
+        <div class="step-card"><span class="step-number">03</span><div class="step-emoji">🧩</div><h3>Test yourself</h3><p>Pass each level test to unlock the next stage. If you miss the pass score, revise and retake the test.</p></div>
+      </div>
+    </section>
+
+    <section class="section progress-section" id="my-progress">
+      <div class="progress-panel">
+        <div><span class="eyebrow">YOUR LEARNING SPACE</span><h2>Every lesson counts.</h2><p>Track lessons completed and level tests passed on this device. Pass each test to unlock the next level.</p></div>
+        <div class="progress-summary"><div class="progress-big" id="completedCount">0</div><div><b>Lessons completed</b><div class="progress-track"><span id="progressBar"></span></div><small id="progressCaption">Start a level lesson to make progress.</small></div></div>
+        <button class="button" id="continueLearning" type="button">Explore lessons <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">L</span> LearnMate<span class="brand-dot">.</span></a><p>Learn something new every day.</p><small>© <span id="year"></span> LearnMate. A student learning project.</small></footer>
+
+  <dialog class="lesson-dialog" id="lessonDialog" aria-labelledby="lessonTitle">
+    <div class="dialog-top"><span class="eyebrow" id="lessonCategory">YOUR FIRST LESSON</span><button class="close-button" id="closeLesson" aria-label="Close lesson" type="button">×</button></div>
+    <div id="lessonContent"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
